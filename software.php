@@ -3,7 +3,7 @@ require_once("include/datas.inc.php");
 const DATA_LOCATION='datas/';
 echo "----------------------Gestion des Licences logicielles--------------------------\n";
 
-
+echo "Sque tu veux"
 
 $employees=loadAndDump(DATA_LOCATION."employees.json");
 $services=loadAndDump(DATA_LOCATION."services.json");
