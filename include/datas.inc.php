@@ -36,8 +36,25 @@ function getEmployeesByService(array $employees,string $service):array{
 		return $emp['service']==$service;}
 	);
 }
+/** 
+	Retourne un tableau filtré d'élément satisfaisant une condition $key=$value	
+	@param array $array Tableau à filter
+	@param string $key nom du champ sur lequel une condifiton est posée
+	@param mixed $value valeur de recherche
+	@return array 
+*/
 
+function where(array $array, string $key, $value):array{
+	$result=[];
+	foreach ($array as $element){
+		if ($element[$key]===$value){
+			$result[]=$element;
+		}
+	}
+	return $result;
+}
 
+?>
 
 
 
