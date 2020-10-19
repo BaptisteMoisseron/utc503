@@ -1,12 +1,11 @@
 suites:
     unit:
         path: .
-        actor: UnitTester
-        modules:
-            enabled:
-                # add more modules here
-                - Asserts
-        step_decorators: ~ 
+coverage:
+    enabled: true
+    remote: false
+    include:
+        - src/*.php
 settings:
     shuffle: true
     lint: true
@@ -15,4 +14,7 @@ paths:
     output: tests/_output
     support: tests/_support
     data: tests
-     
+reporters:
+    xml: Codeception\PHPUnit\Log\JUnit
+    html: Codeception\PHPUnit\ResultPrinter\HTML
+    report: Codeception\PHPUnit\ResultPrinter\Report
