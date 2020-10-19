@@ -54,6 +54,30 @@ function where(array $array, string $key, $value):array{
 	return $result;
 }
 
+/**
+    retourne une version du tabkeay $array 
+    dans laquelles seuls les champs $selectFields sont conservés
+    @param array $array Tableau initial
+    @param array $selectFields Liste des champs séléctionnés
+    @return array
+ */
+
+
+function select(array $array, array $selectFields):array{
+    $result=[];
+    foreach ($array as $index=>$element){
+        $result[$index]=[];
+        foreach ($selectFields as $fieldKey){
+            $result[$index][$fieldKey]=$element[$fieldKey];
+        }
+    }
+    return $result;
+}
+
+function selectWhere(array $array, array $selectFields, array $where):array{
+    return select(where($array, $where[0], $where[1]), $selectFields);
+}
+
 ?>
 
 
